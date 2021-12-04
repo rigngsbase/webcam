@@ -49,6 +49,8 @@ namespace webcam
                     }
                     pictureBox1.Image = BitmapConverter.ToBitmap(image1);
 
+                   
+
                 }
             }
 
@@ -85,7 +87,7 @@ namespace webcam
         private extern static string[] ProcessFrame(int width, int height, IntPtr data);
         private void button2_Click(object sender, EventArgs e)
         {
-           // int sleepTime = (int)Math.Round(1000 / capture.Fps);
+            int sleepTime = (int)Math.Round(1000 / capture.Fps);
 
             if (isCameraRunning)
             {
@@ -106,10 +108,10 @@ namespace webcam
                         listBox1.Items.Add(item);
                     }
         
-                   // Thread.Sleep(50);
+                    Thread.Sleep(50);
                 
                     //  snapshot.Save(string.Format(@"C:\Users\Subtek\Desktop\face_datase\{0}.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
-                   // Application.DoEvents();
+                    Application.DoEvents();
                 }
                 //
                 catch (Exception ex)
@@ -126,7 +128,7 @@ namespace webcam
                 MessageBox.Show("Cannot take picture if the camera isn't capturing image!");
             }
 
-            Cv2.WaitKey(0);
+            Cv2.WaitKey(sleepTime);
 
         }
 
