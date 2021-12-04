@@ -116,7 +116,7 @@ namespace webcam
                   //  snapshot.Save(string.Format(@"C:\Users\Subtek\Desktop\face_datase\{0}.jpg", Guid.NewGuid()), ImageFormat.Jpeg);
                      // Application.DoEvents();
                    }
-
+                //
                 catch (Exception ex)
                 {
                     Console.WriteLine(ex);
